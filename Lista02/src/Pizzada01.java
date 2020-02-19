@@ -11,7 +11,10 @@ public class Pizzada01 {
         Scanner leitorStr = new Scanner(System.in);
         
         System.out.println("Qual o valor da pizza ?");
-        leitorNum.nextDouble(valorPizza);
+        valorPizza = leitorNum.nextDouble();
+        
+        System.out.println("");
+        
         
     }
 }
