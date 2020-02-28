@@ -1,0 +1,12 @@
+Java Free chat
+
+https://www.youtube.com/watch?v=k_FRElwWR48 
+→ pode ser util
+
+
+http://www.jfree.org/jfreechart/api/javadoc/
+→ freechat lib
+
+
+http://www.jfree.org/jfreechart/api/javadoc/ 
+→ sumario de classes e da interface
