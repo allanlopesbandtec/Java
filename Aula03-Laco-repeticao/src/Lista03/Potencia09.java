@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package exercicio;
+package Lista03;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author amlopes1
  */
-public class Potência {
+public class Potencia09 {
     public static void main(String[] args) {
         
         Integer potencia = 1, expoente, base = 0;
@@ -26,7 +26,7 @@ public class Potência {
         System.out.println("\n");
         
         for (Integer i = 0; i < expoente; i++) {
-            System.out.println(base + " ^ " + expoente + " = " + (potencia *= base ) );
+            System.out.println(base + " * " + potencia + " = " + (potencia *= base ) );
             
             
         }

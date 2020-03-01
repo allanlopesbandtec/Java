@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package exercicio;
+package Lista03;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author amlopes1
  */
-public class Acumulador {
+public class Acumulador07 {
     public static void main(String[] args) {
         Integer numero, soma = 0;
         

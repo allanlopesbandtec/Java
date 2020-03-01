@@ -1,10 +1,10 @@
 
-package exercicio;
+package Lista03;
 
 import java.util.Scanner;
 
 
-public class Votação {
+public class Votacao08 {
     public static void main(String[] args) {
        
         Scanner LeitorNum = new Scanner(System.in);

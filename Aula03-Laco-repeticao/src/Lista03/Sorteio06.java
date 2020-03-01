@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author amlopes1
  */
-public class Sorteio {
+public class Sorteio06 {
     public static void main(String[] args) {
         
         Scanner LeitorNum = new Scanner(System.in);
