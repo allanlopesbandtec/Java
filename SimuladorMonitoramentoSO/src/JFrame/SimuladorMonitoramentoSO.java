@@ -39,6 +39,9 @@ public class SimuladorMonitoramentoSO extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        PbCpu = new javax.swing.JProgressBar();
+        PbMemoria = new javax.swing.JProgressBar();
+        PbDisco = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +79,13 @@ public class SimuladorMonitoramentoSO extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel4.setText("Monitoramento de SO");
 
+        PbCpu.setForeground(new java.awt.Color(14, 71, 238));
+
+        PbMemoria.setForeground(new java.awt.Color(255, 25, 44));
+        PbMemoria.setToolTipText("");
+
+        PbDisco.setForeground(new java.awt.Color(80, 189, 33));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,20 +96,26 @@ public class SimuladorMonitoramentoSO extends javax.swing.JFrame {
                         .addGap(153, 153, 153)
                         .addComponent(BtnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblCPU, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LblDISCO)
-                            .addComponent(LblMEMORIA)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addComponent(jLabel4)))
                 .addContainerGap(75, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LblCPU, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LblDISCO)
+                    .addComponent(LblMEMORIA))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PbCpu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PbMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PbDisco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,17 +123,21 @@ public class SimuladorMonitoramentoSO extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel4)
                 .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LblCPU)
-                    .addComponent(jLabel1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(LblCPU)
+                        .addComponent(jLabel1))
+                    .addComponent(PbCpu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(LblMEMORIA))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LblMEMORIA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PbMemoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblDISCO)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(PbDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(BtnAtualizar)
                 .addContainerGap(47, Short.MAX_VALUE))
@@ -132,6 +152,7 @@ public class SimuladorMonitoramentoSO extends javax.swing.JFrame {
         Random Memoria = new Random();
         Random Disco = new Random();
         
+        
         Double DadoCpu = Cpu.nextDouble() * 100, DadoMemoria = Memoria.nextDouble() * 100, DadoDisco = Disco.nextDouble() * 100;
         
         String MsgCPU = String.format("%.2f%s%n", DadoCpu, "%");
@@ -141,6 +162,12 @@ public class SimuladorMonitoramentoSO extends javax.swing.JFrame {
         LblCPU.setText(MsgCPU);
         LblMEMORIA.setText(MsgMEMORIA);
         LblDISCO.setText(MsgDISCO);
+        
+        PbCpu.setValue(DadoCpu.intValue());
+        PbMemoria.setValue(DadoMemoria.intValue());
+        PbDisco.setValue(DadoMemoria.intValue());
+        
+       
     }//GEN-LAST:event_BtnAtualizarActionPerformed
 
     /**
@@ -183,6 +210,9 @@ public class SimuladorMonitoramentoSO extends javax.swing.JFrame {
     private javax.swing.JLabel LblCPU;
     private javax.swing.JLabel LblDISCO;
     private javax.swing.JLabel LblMEMORIA;
+    private javax.swing.JProgressBar PbCpu;
+    private javax.swing.JProgressBar PbDisco;
+    private javax.swing.JProgressBar PbMemoria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
